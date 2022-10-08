@@ -43,7 +43,7 @@ module.exports = {
      * @param {string[]} args 
      */
     async run(client, message, args) {
-        annonceEmbed.setAuthor({name: client.user.username,iconURL: client.user.avatarURL({size: 300, dynamic: true, format: 'webp'}),url: "https://music.shidozz.tk/"})
+        annonceEmbed.setAuthor({name: client.user.username,iconURL: client.user.avatarURL({size: 300, dynamic: true, format: 'webp'})})
         .setFooter({text:client.user.username, iconURL: client.user.displayAvatarURL()})
         await message.reply({ embeds: [annonceEmbed], components: [selectMenu] })
     },
@@ -53,7 +53,7 @@ module.exports = {
      * @param {Interaction} interaction 
      */
     async runInteraction(client, interaction) {
-        annonceEmbed.setAuthor({name: client.user.username,iconURL: client.user.avatarURL({size: 300, dynamic: true, format: 'webp'}),url: "https://music.shidozz.tk/"})
+        annonceEmbed.setAuthor({name: client.user.username,iconURL: client.user.avatarURL({size: 300, dynamic: true, format: 'webp'})})
         .setFooter({text:client.user.username, iconURL: client.user.displayAvatarURL()})
         await interaction.reply({ embeds: [annonceEmbed], components: [selectMenu] })
     },

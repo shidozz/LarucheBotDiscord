@@ -15,7 +15,7 @@ module.exports = {
         member.roles.add(member.guild.roles.cache.get(roleId));
       }
       const embed = new MessageEmbed()
-      .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL(), url: "https://music.shidozz.tk/"})
+      .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL()})
       .setColor("GREEN")
       .setTitle(`Bienvenue ${member.user.tag} !`)
       .setThumbnail(member.user.displayAvatarURL())

@@ -27,7 +27,7 @@ module.exports = {
     examples: ['ticket'],
     description: 'Création de ticket',
     async runInteraction(client, interaction) {
-        TICKET.setAuthor({name: client.user.username,iconURL: client.user.avatarURL({size: 300, dynamic: true, format: 'webp'}),url: "https://music.shidozz.tk/"})
+        TICKET.setAuthor({name: client.user.username,iconURL: client.user.avatarURL({size: 300, dynamic: true, format: 'webp'})})
         .setFooter({text:client.user.username, iconURL: client.user.displayAvatarURL()})
         
         await interaction.reply({ embeds: [TICKET], components: [buttons] })

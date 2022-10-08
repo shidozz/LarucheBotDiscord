@@ -51,7 +51,7 @@ module.exports = {
         const cmd = client.commands.get(cmdName);
         if (!cmd) return interaction.reply({ content: 'cette commande n\'nexiste pas!', ephemeral: true });
         const argsEmbed = new MessageEmbed()
-        .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL(), url: "https://music.shidozz.tk/"})
+        .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL()})
         .setColor("#6e4aff")
         .addFields(
             {

@@ -17,9 +17,9 @@ module.exports = {
            .setColor('#0000ff')
            .setTimestamp()
 
-        client.user.setPresence({ activities: [{ name: 'ShiDev', type: 'WATCHING' }], status: 'online' });
+        client.user.setPresence({ activities: [{ name: 'LA RUCHE', type: 'WATCHING' }], status: 'online' });
 
-        //const devGuild = client.guilds.cache.get('905156673491070996');
+        //const devGuild = client.guilds.cache.get('896164279366078505');
         //devGuild.commands.set(client.commands.map(cmd => cmd));
         client.application.commands.set(client.commands.map(cmd => cmd))
         

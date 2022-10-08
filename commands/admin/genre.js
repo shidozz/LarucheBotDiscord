@@ -10,14 +10,14 @@ const selectMenu = new MessageActionRow()
             .setMaxValues(1)
             .addOptions([
                 {
-                    label: 'Dozzien',
-                    description: 'Vous êtes un Dozzien',
-                    value: '1006400260064681984'
+                    label: 'Homme',
+                    description: 'Vous êtes un Homme',
+                    value: '906644641766580234'
                 },
                 {
-                    label: 'Dozzienne',
-                    description: 'Vous êtes une Dozzienne',
-                    value: '1006400446497308784'
+                    label: 'Femme',
+                    description: 'Vous êtes une Femme',
+                    value: '906644640541863958'
                 }
             ])
          
@@ -36,12 +36,12 @@ module.exports = {
     examples: ['genre'],
     description: 'genre',
     async run(client, message, args) {
-        genreEmbed.setAuthor({name: client.user.username,iconURL: client.user.avatarURL({size: 300, dynamic: true, format: 'webp'}),url: "https://music.shidozz.tk/"})
+        genreEmbed.setAuthor({name: client.user.username,iconURL: client.user.avatarURL({size: 300, dynamic: true, format: 'webp'})})
         .setFooter({text:client.user.username, iconURL: client.user.displayAvatarURL()})
         await message.channel.send({ embeds: [genreEmbed], components: [selectMenu] })
     },
     async runInteraction(client, interaction) {
-        genreEmbed.setAuthor({name: client.user.username,iconURL: client.user.avatarURL({size: 300, dynamic: true, format: 'webp'}),url: "https://music.shidozz.tk/"})
+        genreEmbed.setAuthor({name: client.user.username,iconURL: client.user.avatarURL({size: 300, dynamic: true, format: 'webp'})})
         .setFooter({text:client.user.username, iconURL: client.user.displayAvatarURL()})
         await interaction.reply({ embeds: [genreEmbed], components: [selectMenu] })
     },

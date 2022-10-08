@@ -27,7 +27,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setColor('#C5BE74')
-            .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL(), url: "https://music.shidozz.tk/"})
+            .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL()})
             .setTitle("\`Nouvelle suggestions\`")
             .setDescription("```fix\n" + pollContent + "\n```")
             .setThumbnail(interaction.user.displayAvatarURL())

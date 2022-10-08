@@ -10,24 +10,19 @@ const selectMenu = new MessageActionRow()
             .setMaxValues(4)
             .addOptions([
                 {
-                    label: '👨‍💻',
-                    description: 'Choisis Dev',
+                    label: 'Débutant',
+                    description: 'Choisis Débutant',
                     value: '1006399572106559550'
                 },
                 {
-                    label: '🦾',
-                    description: 'Choisis Modeleur 3D',
+                    label: 'Intermédiaire',
+                    description: 'Choisis Intermédiaire',
                     value: '1006401116021465271'
                 },
                 {
-                    label: '🐱‍🐉',
-                    description: 'Choisis Historien',
+                    label: 'Pro',
+                    description: 'Choisis Pro',
                     value: '1006401921390739457'
-                },
-                {
-                    label: '🎶',
-                    description: 'Choisis Sound Designer',
-                    value: '1006402657818263703'
                 }
             ])
          
@@ -48,13 +43,13 @@ module.exports = {
     description: 'roles',
     async run(client, message, args) {
         rolesEmbed
-            .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL(), url: "https://music.shidozz.tk/"})
+            .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL()})
             .setFooter({text:client.user.username, iconURL: client.user.displayAvatarURL()})
         await message.channel.send({ embeds: [rolesEmbed], components: [selectMenu] })
     },
     async runInteraction(client, interaction) {
         rolesEmbed
-            .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL(), url: "https://music.shidozz.tk/"})
+            .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL()})
             .setFooter({text:client.user.username, iconURL: client.user.displayAvatarURL()})
         await interaction.reply({ embeds: [rolesEmbed], components: [selectMenu] })
     },

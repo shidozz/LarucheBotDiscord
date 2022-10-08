@@ -16,7 +16,7 @@ module.exports = {
 
         if(newMember.roles.cache !== oldMember.roles.cache){
             const embed = new MessageEmbed()
-            .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL(), url: "https://music.shidozz.tk/"})
+            .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL()})
             .setColor("GREEN")
             .setTitle(`Les roles de ${newMember.user.tag} ont été modifié !`)
             .setThumbnail(newMember.user.displayAvatarURL())

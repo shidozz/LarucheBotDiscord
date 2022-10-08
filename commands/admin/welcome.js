@@ -43,7 +43,7 @@ module.exports = {
     description: 'La commande welcome permet d\'envoyer l\'embed des règles',
 
     async runInteraction(client, interaction) {
-        welcomeEmbed.setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL(), url: "https://music.shidozz.tk/"})
+        welcomeEmbed.setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL()})
         .setFooter({text:client.user.username, iconURL: client.user.displayAvatarURL()})
         await interaction.reply({ embeds: [welcomeEmbed], components: [buttons] })
     },

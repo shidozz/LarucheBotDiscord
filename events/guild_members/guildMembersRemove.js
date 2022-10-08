@@ -18,7 +18,7 @@ module.exports = {
         let reasont;
         
         const embed = new MessageEmbed()
-        .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL(), url: "https://music.shidozz.tk/"})
+        .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL()})
         .setColor("RED")
         .setTitle(`Aurevoir ${member.user.tag} !`)
         .setThumbnail(member.user.displayAvatarURL())

@@ -26,26 +26,26 @@ const buttons = new MessageActionRow()
     )
 
 const maisonEmbed = new MessageEmbed()
-    .setTitle('Bienvenue sur ShiDev!')
-    .setDescription(`Ici tu trouveras différentes équipes dans lequel tu pourras évolué !`)
+    .setTitle('Bienvenue sur La Ruche!')
+    .setDescription(`Ici tu trouveras différents niveau dans lequel tu auras des téchniques pour t'amélioré !`)
     
 
 
 module.exports = {
-    name: 'equipe',
+    name: 'niveau',
     category: 'admin',
     permissions: ['SEND_MESSAGES'],
     ownerOnly: true,
-    usage: 'equipe',
-    examples: ['Actionner le bouton de votre équipe'],
-    description: 'Choississez votre équipe',
+    usage: 'niveau',
+    examples: ['Actionner le bouton de votre niveau'],
+    description: 'Choississez votre niveau',
     async run(client, message, args) {
-        maisonEmbed.setAuthor({name: client.user.username,iconURL: client.user.avatarURL({size: 300, dynamic: true, format: 'webp'}),url: "https://music.shidozz.tk/"})
+        maisonEmbed.setAuthor({name: client.user.username,iconURL: client.user.avatarURL({size: 300, dynamic: true, format: 'webp'})})
         .setFooter({text:client.user.username, iconURL: client.user.displayAvatarURL()})
         await message.channel.send({ embeds: [maisonEmbed], components: [buttons] })
     },
     async runInteraction(client, interaction) {
-        maisonEmbed.setAuthor({name: client.user.username,iconURL: client.user.avatarURL({size: 300, dynamic: true, format: 'webp'}),url: "https://music.shidozz.tk/"})
+        maisonEmbed.setAuthor({name: client.user.username,iconURL: client.user.avatarURL({size: 300, dynamic: true, format: 'webp'})})
         .setFooter({text:client.user.username, iconURL: client.user.displayAvatarURL()})
         await interaction.reply({ embeds: [maisonEmbed], components: [buttons] })
     },

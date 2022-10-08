@@ -51,7 +51,7 @@ module.exports = {
         
 
         const cmdEmbed = new MessageEmbed()
-            .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL(), url: "https://music.shidozz.tk/"})
+            .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL()})
             .setColor("GREYPLE")
             .setTitle("[/] 📋 User Info !")
             .setThumbnail(member.user.displayAvatarURL())
