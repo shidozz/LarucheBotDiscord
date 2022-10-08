@@ -3,3 +3,4 @@ run.bat
 streams.json
 node_modules/
 package-lock.json
+publish.bat

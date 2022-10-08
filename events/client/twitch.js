@@ -57,7 +57,7 @@ function twitch(_client) {
                         .setTitle(response.data.data[0]["title"])
                         .setFooter({text:response.data.data[0]["user_name"], iconURL: rsp.data.data[0]["profile_image_url"]})
                         .setTimestamp()
-                    channelD.send({content: `<@&1020159223864246342>`, embeds: [emd]})
+                    channelD.send({content: `<@&1028429099380772915>`, embeds: [emd]})
                 }else if(response.data.data[0] && oldData.streamers[n].isOnLive !== data.streamers[n].isOnLive){
                                         
     		    let emd = new MessageEmbed()
@@ -69,7 +69,7 @@ function twitch(_client) {
                         .setTitle(response.data.data[0]["title"])
                         .setFooter({text:response.data.data[0]["user_name"], iconURL: rsp.data.data[0]["profile_image_url"]})
                         .setTimestamp()
-                    channelD.send({content: `<@&1020159223864246342>`, embeds: [emd]})
+                    channelD.send({content: `<@&1028429099380772915>`, embeds: [emd]})
                 }
                 n++;
             })
