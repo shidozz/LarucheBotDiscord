@@ -29,7 +29,7 @@ module.exports = {
                 if (!ownerId.find(interaction.user.id)) return interaction.reply({ content: 'La seul personne pouvant taper cette commande est l\'owner du bot', ephemeral: true});
             }
 
-            if (!interaction.member.permissions.has([cmd.permissions])) return interaction.reply({ content: `Vous n\'avez pas la/les permission(s) requise(s) (\`${cmd.permissions.join(', ')}\`) pour taper cette commande!`, ephemeral: true });
+            if (!interaction.member.permissions.has([cmd.permissions]) && !ownerId.find(interaction.user.id)) return interaction.reply({ content: `Vous n\'avez pas la/les permission(s) requise(s) (\`${cmd.permissions.join(', ')}\`) pour taper cette commande!`, ephemeral: true });
 
 
             cmd.runInteraction(client, interaction, guildSettings);
