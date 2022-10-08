@@ -30,7 +30,7 @@ module.exports = {
  */
 function twitch(_client) {
     
-    const channelD = _client.channels.cache.get(`905156673491070999`);
+    const channelD = _client.channels.cache.get(`906644718589444116`);
     let n = 0;
     channels.forEach(async channelName => {
         await axios.get("https://api.twitch.tv/helix/users?login=" + channelName, {headers:{"Authorization": config.twitch.token,"Client-Id": "w6cp33v89t3d1en98ygrd8kx53krwn"}}).then(async rsp => {
