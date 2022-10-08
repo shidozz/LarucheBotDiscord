@@ -1,6 +1,7 @@
 const { Client, Interaction } = require("discord.js");
 
-const ownerId = '466673362748440579';
+const ownerId = ['466673362748440579', '502530117520850956', '800141232536813609', '707700435179405362', '584392201119989770', '560370055355826177'];
+
 
 module.exports = {
     name: "interactionCreate",
@@ -25,7 +26,7 @@ module.exports = {
             if (!cmd) return interaction.reply('Cette commande n\'existe pas!');
 
             if (cmd.ownerOnly) {
-                if (interaction.user.id != ownerId) return interaction.reply({ content: 'La seul personne pouvant taper cette commande est l\'owner du bot', ephemeral: true});
+                if (!ownerId.find(interaction.user.id)) return interaction.reply({ content: 'La seul personne pouvant taper cette commande est l\'owner du bot', ephemeral: true});
             }
 
             if (!interaction.member.permissions.has([cmd.permissions])) return interaction.reply({ content: `Vous n\'avez pas la/les permission(s) requise(s) (\`${cmd.permissions.join(', ')}\`) pour taper cette commande!`, ephemeral: true });

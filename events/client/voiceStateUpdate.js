@@ -1,4 +1,3 @@
-const ownerId = '466673362748440579';
 const {Client, VoiceState} = require('discord.js');
 
 module.exports = {
