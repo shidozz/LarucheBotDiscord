@@ -1,6 +1,6 @@
 const { Client, Interaction } = require("discord.js");
 
-const ownerId = ["466673362748440579", "502530117520850956", "800141232536813609", "707700435179405362", "584392201119989770", "560370055355826177"];
+const ownerId = "466673362748440579";
 
 
 module.exports = {
@@ -26,10 +26,10 @@ module.exports = {
             if (!cmd) return interaction.reply('Cette commande n\'existe pas!');
 
             if (cmd.ownerOnly) {
-                if (ownerId.find(interaction.user.id) !== undefined) return interaction.reply({ content: 'La seul personne pouvant taper cette commande est l\'owner du bot', ephemeral: true});
+                if (ownerId !== interaction.user.id) return interaction.reply({ content: 'La seul personne pouvant taper cette commande est l\'owner du bot', ephemeral: true});
             }
 
-            if (!interaction.member.permissions.has([cmd.permissions]) && ownerId.find(interaction.user.id) !== undefined) return interaction.reply({ content: `Vous n\'avez pas la/les permission(s) requise(s) (\`${cmd.permissions.join(', ')}\`) pour taper cette commande!`, ephemeral: true });
+            if (!interaction.member.permissions.has([cmd.permissions])) return interaction.reply({ content: `Vous n\'avez pas la/les permission(s) requise(s) (\`${cmd.permissions.join(', ')}\`) pour taper cette commande!`, ephemeral: true });
 
 
             cmd.runInteraction(client, interaction, guildSettings);
