@@ -75,4 +75,5 @@ function twitch(_client) {
             })
         })
     })
+    return console.log("channels: " + JSON.stringify(channels));
 }
