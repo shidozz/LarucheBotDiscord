@@ -16,21 +16,13 @@ module.exports = {
      */
     async execute(client) {
 
-        while(true){
-            setInterval(tw(client), 1000)
-        }
+        //while(true){
+            setInterval(twitch(client), 1000)
+        //}
 
     },
 
 };
-/**
- * 
- * @param {Client} __Client 
- * @returns 
- */
-function tw(__Client) {
-    return twitch(__Client);
-}
 /**
  * 
  * @param {Client} _client 
