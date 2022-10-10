@@ -75,5 +75,4 @@ function twitch(_client) {
             })
         })
     })
-    return true;
 }
