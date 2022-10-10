@@ -17,12 +17,20 @@ module.exports = {
     async execute(client) {
 
         while(true){
-            setInterval(twitch(client), 1000)
+            setInterval(tw(client), 1000)
         }
 
     },
 
 };
+/**
+ * 
+ * @param {Client} __Client 
+ * @returns 
+ */
+function tw(__Client) {
+    return twitch(__Client);
+}
 /**
  * 
  * @param {Client} _client 
@@ -75,5 +83,5 @@ function twitch(_client) {
             })
         })
     })
-    return console.log("channels: " + JSON.stringify(channels));
+    return ;
 }
