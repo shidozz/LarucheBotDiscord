@@ -29,7 +29,7 @@ module.exports = {
             .setTimestamp()
             .setFooter({text:newMember.user.username, iconURL: newMember.user.displayAvatarURL()})
     
-            const logChannel = client.channels.cache.find(chann => chann.name === 'logs-roles');
+            const logChannel = client.channels.cache.get(fetchGuild.logChannel);
             //logChannel -> Channel (textchannel)
             logChannel.send({ embeds: [embed] });
         }

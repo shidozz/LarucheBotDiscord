@@ -48,7 +48,7 @@ function twitch(_client) {
                 //Logger.info(JSON.stringify(rsp.data.data[0]))
                 if(response.data.data[0] && turn == 0){
                     
-    		    let emd = new MessageEmbed()
+    		        let emd = new MessageEmbed()
                         .setAuthor({name: _client.user.username, iconURL: _client.user.displayAvatarURL(), url: "https://twitch.tv/" + response.data.data[0]["user_login"]})
                         .addFields({name: "Nom du Jeu:", value: `${response.data.data[0]["game_name"]}`, inline: false}, {name: "Nombre de Viewers:", value: `${response.data.data[0]["viewer_count"]}`, inline: false}, {name: "Nombre de Vues Total sur la chaine:", value: `${rsp.data.data[0]["view_count"]}`, inline: false})
                         .setThumbnail(rsp.data.data[0]["profile_image_url"])
@@ -60,7 +60,7 @@ function twitch(_client) {
                     channelD.send({content: `<@&1028429099380772915>`, embeds: [emd]})
                 }else if(response.data.data[0] && oldData.streamers[n].isOnLive !== data.streamers[n].isOnLive){
                                         
-    		    let emd = new MessageEmbed()
+    		        let emd = new MessageEmbed()
                         .setAuthor({name: _client.user.username, iconURL: _client.user.displayAvatarURL(), url: "https://twitch.tv/" + response.data.data[0]["user_login"]})
                         .addFields({name: "Nom du Jeu:", value: `${response.data.data[0]["game_name"]}`, inline: false}, {name: "Nombre de Viewers:", value: `${response.data.data[0]["viewer_count"]}`, inline: false}, {name: "Nombre de Vues Total sur la chaine:", value: `${rsp.data.data[0]["view_count"]}`, inline: false})
                         .setThumbnail(rsp.data.data[0]["profile_image_url"])
@@ -75,5 +75,5 @@ function twitch(_client) {
             })
         })
     })
-    return;
+    return true;
 }
