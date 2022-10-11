@@ -23,7 +23,7 @@ module.exports = {
             .setThumbnail(newMember.user.displayAvatarURL())
             .addFields(
                 {name: "֍ Id:", value: `${newMember}`, inline: false},
-                {name: "֍ Roles:", value: `${newMember.roles.cache.map(role => role).filter((role) => {if(oldRoles.has(role.id) return true)).join(', ')}}`, inline: false},
+                {name: "֍ Roles:", value: `${newMember.roles.cache.map(role => role).filter((role) => {if(oldRoles.has(role.id) return true})).join(', ')}`, inline: false},
                 {name: "֍ Créé le:", value: `<t:${parseInt(newMember.user.createdTimestamp / 1000)}:f> (<t:${parseInt(newMember.user.createdTimestamp / 1000)}:R>)`, inline: false},
                 {name: "֍ Rejoint le:", value: `<t:${parseInt(newMember.joinedTimestamp / 1000)}:f> (<t:${parseInt(newMember.joinedTimestamp / 1000)}:R>)`, inline: false},
             )
