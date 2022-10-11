@@ -30,7 +30,7 @@ module.exports = {
             .setTimestamp()
             .setFooter({text:newMember.user.username, iconURL: newMember.user.displayAvatarURL()})
     
-            const logChannel = client.channels.cache.get(fetchGuild.logChannel);
+            const logChannel = client.channels.cache.get("906644703523536896");
             //logChannel -> Channel (textchannel)
             logChannel.send({ embeds: [embed] });
         }
