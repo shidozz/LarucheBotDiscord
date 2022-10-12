@@ -11,8 +11,8 @@ module.exports = {
      * @param {GuildMember} newMember 
      */
     async execute(client, oldMember, newMember) {
-        const nowTimestampR = Formatters.time(dayjs(Date.now()), Formatters.TimestampStyles.RelativeTime);
-        const nowTimestampF = Formatters.time(dayjs(Date.now()), Formatters.TimestampStyles.LongDateTime);
+        const nowTimestampR = Formatters.time(dayjs(Date.now()).unix(), Formatters.TimestampStyles.RelativeTime);
+        const nowTimestampF = Formatters.time(dayjs(Date.now()).unix(), Formatters.TimestampStyles.LongDateTime);
         //const nowTimestampF = `<t:${Date.now()}:F>`
         //const nowTimestampR = `<t:${Date.now()}:R>`
         const fetchGuild = client.guilds.cache.get(newMember.guild)
