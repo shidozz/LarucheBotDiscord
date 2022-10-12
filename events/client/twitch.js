@@ -15,10 +15,10 @@ module.exports = {
      * @param {Client} client 
      */
     async execute(client) {
-
-        //while(true){
-            //setInterval(twitch(client), 1000)
-        //}
+        let IntID;
+        if (!IntID){
+            IntID = setInterval(twitch(client), 1000);
+        }
 
     },
 
