@@ -11,10 +11,10 @@ module.exports = {
      * @param {GuildMember} newMember 
      */
     async execute(client, oldMember, newMember) {
-        const nowTimestampR = Formatters.time(dayjs(Date.now()).unix(), Formatters.TimestampStyles.RelativeTime);
-        const nowTimestampF = Formatters.time(dayjs(Date.now()).unix(), Formatters.TimestampStyles.LongDateTime);
-        //const nowTimestampF = `<t:${Date.now()}:F>`
-        //const nowTimestampR = `<t:${Date.now()}:R>`
+        //const nowTimestampR = Formatters.time(dayjs(Date.now()).unix(), Formatters.TimestampStyles.RelativeTime);
+        //const nowTimestampF = Formatters.time(dayjs(Date.now()).unix(), Formatters.TimestampStyles.LongDateTime);
+        //const nowTimestampF = `<t:${dayjs(Date.now()).unix()}:F>`
+        //const nowTimestampR = `<t:${dayjs(Date.now()).unix()}:R>`
         const fetchGuild = client.guilds.cache.get(newMember.guild)
         console.log(nowTimestampF)
         if(newMember.roles.cache !== oldMember.roles.cache && newMember.roles.cache.size > oldMember.roles.cache.size){
@@ -41,7 +41,7 @@ module.exports = {
 	    let newRoles = newMember.roles;
             const embed = new MessageEmbed()
             .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL()})
-            .setColor("GREEN")
+            .setColor("RED")
             .setTitle(`Les roles de ${newMember.user.tag} ont été modifié !`)
             .setThumbnail(newMember.user.displayAvatarURL())
             .addFields(
