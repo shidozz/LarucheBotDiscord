@@ -16,7 +16,7 @@ module.exports = {
         const nowTimestampF = `<t:${Date.now()}:F>`
         const nowTimestampR = `<t:${Date.now()}:R>`
         const fetchGuild = client.guilds.cache.get(newMember.guild)
-
+        console.log(nowTimestampF)
         if(newMember.roles.cache !== oldMember.roles.cache && newMember.roles.cache.length > oldMember.roles.cache.length){
 	    let oldRoles = oldMember.roles;
             const embed = new MessageEmbed()
