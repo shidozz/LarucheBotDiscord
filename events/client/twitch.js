@@ -17,7 +17,7 @@ module.exports = {
     async execute(client) {
 
         //while(true){
-            setInterval(twitch(client), 1000)
+            //setInterval(twitch(client), 1000)
         //}
 
     },
