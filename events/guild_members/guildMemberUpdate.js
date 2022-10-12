@@ -11,13 +11,13 @@ module.exports = {
      * @param {GuildMember} newMember 
      */
     async execute(client, oldMember, newMember) {
-        //const nowTimestampR = Formatters.time(dayjs(Date.now()), Formatters.TimestampStyles.RelativeTime);
-        //const nowTimestampF = Formatters.time(dayjs(Date.now()), Formatters.TimestampStyles.LongDateTime);
-        const nowTimestampF = `<t:${Date.now()}:F>`
-        const nowTimestampR = `<t:${Date.now()}:R>`
+        const nowTimestampR = Formatters.time(dayjs(Date.now()), Formatters.TimestampStyles.RelativeTime);
+        const nowTimestampF = Formatters.time(dayjs(Date.now()), Formatters.TimestampStyles.LongDateTime);
+        //const nowTimestampF = `<t:${Date.now()}:F>`
+        //const nowTimestampR = `<t:${Date.now()}:R>`
         const fetchGuild = client.guilds.cache.get(newMember.guild)
         console.log(nowTimestampF)
-        if(newMember.roles.cache !== oldMember.roles.cache && newMember.roles.cache.length > oldMember.roles.cache.length){
+        if(newMember.roles.cache !== oldMember.roles.cache && newMember.roles.cache.size > oldMember.roles.cache.size){
 	    let oldRoles = oldMember.roles;
             const embed = new MessageEmbed()
             .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL()})
@@ -35,7 +35,7 @@ module.exports = {
             const logChannel = client.channels.cache.get("906644703523536896");
             //logChannel -> Channel (textchannel)
             logChannel.send({ embeds: [embed] });
-        } else if(newMember.roles.cache !== oldMember.roles.cache && newMember.roles.cache.length < oldMember.roles.cache.length){
+        } else if(newMember.roles.cache !== oldMember.roles.cache && newMember.roles.cache.size < oldMember.roles.cache.size){
 
 	    let oldRoles = oldMember.roles;
 	    let newRoles = newMember.roles;
