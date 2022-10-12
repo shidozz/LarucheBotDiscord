@@ -26,7 +26,7 @@ module.exports = {
             .setThumbnail(newMember.user.displayAvatarURL())
             .addFields(
                 {name: "֍ Id:", value: `${newMember}`, inline: false},
-                {name: "֍ Roles:", value: `${newMember.roles.cache.map(role => role).filter((role) => {if(!oldRoles.cache.has(role.id) && role.id !== member.guild.id) return true}).join(', ')}`, inline: false},
+                {name: "֍ Roles:", value: `${newMember.roles.cache.map(role => role).filter((role) => {if(!oldRoles.cache.has(role.id) && role.id !== oldMember.guild.id) return true}).join(', ')}`, inline: false},
                 {name: "֍ Ajouté le:", value: `${nowTimestampF} (${nowTimestampR})`, inline: false},
             )
             .setTimestamp()
@@ -46,7 +46,7 @@ module.exports = {
             .setThumbnail(newMember.user.displayAvatarURL())
             .addFields(
                 {name: "֍ Id:", value: `${newMember}`, inline: false},
-                {name: "֍ Roles:", value: `${oldRoles.cache.map(role => role).filter((role) => {if(!newRoles.cache.has(role.id) && role.id !== member.guild.id) return true}).join(', ')}`, inline: false},
+                {name: "֍ Roles:", value: `${oldRoles.cache.map(role => role).filter((role) => {if(!newRoles.cache.has(role.id) && role.id !== oldMember.guild.id) return true}).join(', ')}`, inline: false},
                 {name: "֍ Retiré le:", value: `${nowTimestampF} (${nowTimestampR})`, inline: false},
             )
             .setTimestamp()
