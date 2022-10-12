@@ -1,5 +1,5 @@
 const dayjs = require("dayjs");
-const { MessageEmbed, Client, GuildMember, Formatters} = require("discord.js");
+const { MessageEmbed, Client, GuildMember} = require("discord.js");
 
 module.exports = {
     name: "guildMemberUpdate",
@@ -11,9 +11,7 @@ module.exports = {
      * @param {GuildMember} newMember 
      */
     async execute(client, oldMember, newMember) {
-        //const nowTimestampR = Formatters.time(dayjs(Date.now()).unix(), Formatters.TimestampStyles.RelativeTime);
-        //const nowTimestampF = Formatters.time(dayjs(Date.now()).unix(), Formatters.TimestampStyles.LongDateTime);
-        const nowTimestampF = `<t:${dayjs(Date.now()).unix()}:F>`
+        const nowTimestampF = `<t:${dayjs(Date.now()).unix()}:f>`
         const nowTimestampR = `<t:${dayjs(Date.now()).unix()}:R>`
         const fetchGuild = client.guilds.cache.get(newMember.guild)
         console.log(nowTimestampF)
@@ -32,7 +30,7 @@ module.exports = {
             .setTimestamp()
             .setFooter({text:newMember.user.username, iconURL: newMember.user.displayAvatarURL()})
     
-            const logChannel = client.channels.cache.get("906644703523536896");
+            const logChannel = client.channels.cache.get("1029784220421345312");
             //logChannel -> Channel (textchannel)
             logChannel.send({ embeds: [embed] });
         } else if(newMember.roles.cache !== oldMember.roles.cache && newMember.roles.cache.size < oldMember.roles.cache.size){
@@ -52,7 +50,7 @@ module.exports = {
             .setTimestamp()
             .setFooter({text:newMember.user.username, iconURL: newMember.user.displayAvatarURL()})
     
-            const logChannel = client.channels.cache.get("906644703523536896");
+            const logChannel = client.channels.cache.get("1029784220421345312");
             //logChannel -> Channel (textchannel)
             logChannel.send({ embeds: [embed] });
 	}
