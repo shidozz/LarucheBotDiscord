@@ -13,8 +13,8 @@ module.exports = {
     async execute(client, oldMember, newMember) {
         //const nowTimestampR = Formatters.time(dayjs(Date.now()).unix(), Formatters.TimestampStyles.RelativeTime);
         //const nowTimestampF = Formatters.time(dayjs(Date.now()).unix(), Formatters.TimestampStyles.LongDateTime);
-        //const nowTimestampF = `<t:${dayjs(Date.now()).unix()}:F>`
-        //const nowTimestampR = `<t:${dayjs(Date.now()).unix()}:R>`
+        const nowTimestampF = `<t:${dayjs(Date.now()).unix()}:F>`
+        const nowTimestampR = `<t:${dayjs(Date.now()).unix()}:R>`
         const fetchGuild = client.guilds.cache.get(newMember.guild)
         console.log(nowTimestampF)
         if(newMember.roles.cache !== oldMember.roles.cache && newMember.roles.cache.size > oldMember.roles.cache.size){
